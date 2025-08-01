@@ -3,70 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planet AI - The Digital Nervous System of the Planet</title>
-
+  <title>AI Rankings Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
-   <script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/loaders/GLTFLoader.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/controls/OrbitControls.js"></script>
 
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <video class="bg-video" src="videos/galaxy.mp4" autoplay muted loop playsinline></video>
-    <div class="bg-overlay"></div>
+  <div class="page-background"></div>
+  <canvas id="bg-particles"></canvas>
 
-    <div class="navbar">
-      <div class="logo">
-        <h1>PLANET AI</h1>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#ai">PLANET AI's</a></li>
-        <li><a href="#services">CONTACT</a></li>
-        <li><a href="#jobs">JOBS</a></li>
-        <li><a href="#about">ABOUT</a></li>
-      </ul>
-    </div>
 
-    <div class="hero-section">
-      <div class="hero-left">
-        <h1>THE DIGITAL <span> NERVOUS SYSTEM </span> OF THE PLANET</h1>
-        <h3>
-          WHERE INTELLIGENCE MEETS ENVIRONMENTAL CONSCIOUSNESS <br />
-          SHAPING THE FUTURE OF EARTH WITH AI
-        </h3>
-
-        <div class="cta-btn">
-          <button>INVEST NOW</button>
-          <button class="explore-btn">EXPLORE PLATFORM</button>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-image-container">
-          <div id="globe-container"></div>
-
-          <!-- Floating Info Box -->
-          <div id="info-box" style="display: none;">
-            <h4>🌐 AI Node</h4>
-            <p>This is an AI-monitored region.</p>
-          </div>
-
-          <!-- Hotspots -->
-          <button class="hotspot" data-position="0.56 0.26 -0.76">
-            <div class="hotspot-annotation">AI Data Hub</div>
-          </button>
-          <button class="hotspot" data-position="-0.25 0.45 0.85">
-            <div class="hotspot-annotation">Climate Sensor</div>
-          </button>
-        </div>
-      </div>
-    </div>
+<header class="navbar-wrapper">
+  <div class="navbar">
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">AI Modules</a>
+      <a href="#">Layers</a>
+      <a href="#">Dashboard</a>
+    </nav>
+    <button class="join-btn">Join waitlist</button>
   </div>
-  <script src="main.js"></script>
+</header>
+
+<div class="background-wrapper">
+  <div class="decorative-blobs">
+    <div class="blob blob-left"></div>
+    <div class="blob blob-right"></div>
+  </div>
+
+  <div class="floating-rock rock1"></div>
+  <div class="floating-rock rock2"></div>
+  <div class="floating-rock rock3"></div>
+
+  <div class="floating-object object1"></div>
+  <div class="floating-object object2"></div>
+  <div class="floating-object object3"></div>
+</div>
+
+
+<div class="side-info">
+  <div class="side-box left-box">
+    <p><span>⚡</span> Powered by XYZ Technologies</p>
+    <p><span>📊</span> Realtime analytics</p>
+  </div>
+  <div class="side-box right-box">
+    <p><span>🚀</span> 99.9% Accuracy</p>
+    <p><span>📦</span> Built for scale</p>
+  </div>
+</div>
+
+
+  <section class="hero">
+    <div class="glow-bg"></div>
+    <div class="glass-panel">
+      <h1 class="hero-title futuristic-glow">
+        Invest in Earth's Intelligence Grid
+      </h1>
+      <p class="hero-subtext impactful-clean">
+        Planet AI is building a decentralized nervous system for Earth — a real-time command center powered by intelligent agents that protect life, climate, and future economies.
+      </p>
+      
+      <div class="impact-points">
+        <div class="impact-item">
+          <div class="impact-icon">🌍</div>
+          <span class="impact-text">Live <span class="highlight">planetary monitoring</span> from oceans to forests</span>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">🧠</div>
+          <span class="impact-text">Specialized <span class="highlight">AI agents</span> solving global challenges</span>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">🔐</div>
+          <span class="impact-text">Dual-layer system: public transparency + private precision</span>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">📡</div>
+          <span class="impact-text">IoT integration with real-time satellite + drone data</span>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">💼</div>
+          <span class="impact-text">Investor-ready model with scale, impact, and revenue</span>
+        </div>
+      </div>
+      
+      <button class="cta-btn-glass">
+        <span class="cta-text">Explore Investment Opportunity</span>
+        <span class="cta-subtext">View ecosystem, projections & impact potential</span>
+      </button>
+    </div>
+    
+    <!-- Neural signal particles -->
+    <div class="neural-particles"></div>
+  </section>
+
+
+   
+  <section class="dashboard-card">
+    <p class="placeholder">[ Dashboard content goes here ]</p>
+  </section>
+
+
+  <div class="investor-cta">
+  <p>🌐 Planet AI is raising. <strong>Partner with us.</strong></p>
+  <button>Pitch Deck →</button>
+</div>
+
 </body>
 </html>
